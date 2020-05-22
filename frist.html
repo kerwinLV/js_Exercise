@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<title>div</title> 
+<style>
+	#d{width: 1020px; height: 400px;border: 1px solid red;background-color: #0000FF;margin: 0 auto;}
+	#d1{width: 500px;height: 400px;text-align: center;margin: 0 auto;}
+	#d3{width: 500px; height: 400px; text-align: center;color: #F2F2F2;float: right;background-color: #8B4513;}
+	#d2{
+		width: 500px;
+		height: 400px;
+		float:left;
+		background-color: #000000;
+	}
+</style>
+</head> 
+<body> 
+<script>
+/*展开和收起用一个div,也可以说它是个按钮,假设它的id=d1;
+假设需要显示和隐藏的div叫d2;
+下面这段代码只是粗略的实现了你的要求,主要是给你提供个思路;
+*/
+$(function(){
+$('#d1').click(function(){//给d1绑定一个点击事件;
+            
+        /*这个判断的意义是,如果d2是隐藏的,那么让它显示出来,并将d1的文本内容替换成收起,
+        如果是显示的,那么就隐藏它并将d1的文本内容替换为展开;*/
+        if(($('#d2').is(':hidden'))&&(!$('#d3').is(':hidden')))
+        {
+          $('#d2').slideDown('slow');  
+          $('#d3').slideUp('slow');
+          $(this).text('收起');
+        }
+        
+        else{
+          $('#d2').slideUp('slow');
+          $('#d3').slideDown('slow');
+          $(this).text('展开');  
+            }
+                
+    /*这是一个很简单的事件处理,如果还需要跟上图片的变换,就在判断的对应位置写入图片或者背景变换的代码,*/
+});
+});
+</script>
+<div id="d">
+<div id='d2' style=" display:none">内容</div>
+<div id='d3' style=" display: block">jfdlsakjfl</div>
+</div>
+
+
+<div id='d1'>展开</div>
+</body> 
+</html> 

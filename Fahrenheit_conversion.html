@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <!-- 华氏度 = 32 + 摄氏度 × 1.8  -->
+    摄氏度:<input type="text" name="fa" id="fa"/>
+    华摄氏度:<input type="text" name="celsius" id="celsius"/>
+    <input type="button" onclick="tranfor()" value="转换"/>
+    <script>
+        function tranfor(){
+            // console.log("gjasgjjgg");
+            var fa = document.getElementById("fa").value;
+            // console.log(fa)
+            if(fa){
+                console.log("fafffffffaf")
+                document.getElementById("celsius").value=fa*1.8+32
+            }else{
+                console.log("cecececece")
+                document.getElementById("fa").value=(document.getElementById("celsius").value-32)/1.8
+            } 
+        }
+    </script>
+</body>
+
+</html>
